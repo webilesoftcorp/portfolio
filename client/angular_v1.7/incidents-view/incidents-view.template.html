@@ -1,0 +1,139 @@
+<nav class="mc-action-bar">
+    <div class="mc-action-bar__container">
+        <div class="mc-action-bar__left">
+            <header class="mc-action-bar__header" translate>COMMON_INCIDENTS</header>
+
+            <div class="mc-action-bar__vertical-splitter"></div>
+
+            <div class="mc-action-bar__items-group">
+                <div class="mc-action-bar__item">
+                    <button type="button"
+                            ng-disabled="!$ctrl.isIncidentEditable"
+                            ng-click="$ctrl.handleEditBtnClick()"
+                            class="mc-btn mc-btn_action-bar mc-action-bar__link mc-btn_action-bar-left-icon">
+                        <i class="fa fa-pencil mc-btn__icon"></i>
+                        <span translate>EDIT</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="layout-row layout-align-center-start layout-top-margin_8 layout-bottom-margin_8 pt-container max-bounds" ng-if="$ctrl.incident">
+    <aside class="layout-column pt-full-height entity-edit__sidebar left-panel">
+        <mc-list source-list="$ctrl.incidentsTabList"
+                 template-url="nav-list-item.partial.html"
+                 selected-items="$ctrl.selectedTab">
+        </mc-list>
+
+        <h4 class="mc-h4 layout-left-margin_16" translate>INCIDENT_ADDITIONAL_DATA</h4>
+        <mc-list class="layout-left-margin_16"
+                 source-list="$ctrl.attacksList"
+                 template-url="nav-list-item.partial.html"
+                 selected-items="$ctrl.selectedTab"
+                 options="$ctrl.attacksListOptions">
+        </mc-list>
+
+    </aside>
+    <main class="layout-left-margin_8 pt-full-height flex-50">
+        <section class="pt-section pt-full-height">
+            <header class="layout-row pt-bottom-border">
+                <h3 class="mc-h3 layout-top-margin_8 layout-left-margin_16 layout-right-margin_16"
+                    ng-hide="$ctrl.activeTab.id === 'recommendations'"
+                    translate
+                    translate-value-name="{{ $ctrl.incident.hrid }}"
+                    translate-value-date="{{ $ctrl.incident.fixationDate | date:'d MMMM, HH:mm' }}">
+                    INCIDENT_NAME_TITLE
+                </h3>
+                <h3 class="mc-h3 layout-top-margin_8 layout-left-margin_16 layout-right-margin_16"
+                    ng-show="$ctrl.activeTab.id === 'recommendations'"
+                    translate
+                    translate-value-name="{{ $ctrl.incident.hrid }}"
+                    translate-value-status="{{ $ctrl.incidentStatus }}">
+                    INCIDENT_STATUS_TITLE
+                </h3>
+            </header>
+            <div class="layout-padding_16 layout-top-padding_24 pt-overflow-scroll"
+                 ng-switch="$ctrl.activeTab.id"
+                 style="height: calc(100% - 40px)">
+                <incidents-view-general-info ng-switch-when="general"
+                                             incident="$ctrl.incident">
+                </incidents-view-general-info>
+                <incidents-view-details ng-switch-when="details"
+                                        incident="$ctrl.incident"
+                                        signature-fields="$ctrl.incidentsSignatureFields">
+                </incidents-view-details>
+
+                <incidents-view-recommendations ng-switch-when="recommendations"
+                                                active-tab="$ctrl.activeTab.id"
+                                                incident-status="$ctrl.incident.status">
+                </incidents-view-recommendations>
+
+                <incidents-view-attachments ng-switch-when="attachments" attachments="$ctrl.incident.attachments">
+                </incidents-view-attachments>
+
+                <incidents-view-recommendations ng-switch-when="comments"
+                                                active-tab="$ctrl.activeTab.id"
+                                                incident-status="$ctrl.incident.status">
+                </incidents-view-recommendations>
+
+                <incidents-view-phishing-attack ng-switch-when="phishing"
+                                                attack="$ctrl.currentAttack">
+                </incidents-view-phishing-attack>
+
+                <incidents-view-control-center ng-switch-when="botNet"
+                                               instance="$ctrl.currentAttack">
+                </incidents-view-control-center>
+
+                <incidents-view-vulnerabilities ng-switch-when="vulnerabilities"
+                                                instance="$ctrl.currentAttack">
+                </incidents-view-vulnerabilities>
+
+                <incidents-view-content-changes ng-switch-when="contentChange"
+                                                instance="$ctrl.currentAttack">
+                </incidents-view-content-changes>
+
+                <incidents-view-malicious-resource ng-switch-when="maliciousResources"
+                                                   instance="$ctrl.currentAttack">
+                </incidents-view-malicious-resource>
+
+                <incidents-view-prohibited-content ng-switch-when="prohibitedContent"
+                                                   instance="$ctrl.currentAttack">
+                </incidents-view-prohibited-content>
+
+                <incidents-view-traffic-hijack-attack ng-switch-when="trafficHijackAttack"
+                                                      instance="$ctrl.currentAttack">
+                </incidents-view-traffic-hijack-attack>
+
+                <incidents-view-spam ng-switch-when="spam"
+                                     instance="$ctrl.currentAttack">
+                </incidents-view-spam>
+
+                <incidents-view-malware ng-switch-when="malware"
+                                        malware="$ctrl.currentAttack"
+                                        malware-sources-fieldset="$ctrl.incidentsMalwareSourcesFieldset">
+                </incidents-view-malware>
+                <incidents-view-brute-force ng-switch-when="bruteForce"
+                                            instance="$ctrl.currentAttack">
+                </incidents-view-brute-force>
+                <incidents-view-ddos ng-switch-when="ddos"
+                                     ddos="$ctrl.currentAttack"
+                                     attack-types="$ctrl.incidentsDdosAttackTypes">
+                </incidents-view-ddos>
+
+            </div>
+        </section>
+    </main>
+
+    <aside class="pt-full-height right-panel">
+        <section class="pt-section pt-full-height pt-overflow-noscroll layout-left-margin_8">
+            <header class="layout-row pt-bottom-border">
+                <h3 class="mc-h3 layout-top-margin_8 layout-left-margin_16 layout-right-margin_16" translate>
+                    INCIDENT_LOG_TITLE
+                </h3>
+            </header>
+            <incidents-view-log incident-status="$ctrl.incident.status"></incidents-view-log>
+        </section>
+    </aside>
+</div>

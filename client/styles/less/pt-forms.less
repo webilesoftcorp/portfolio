@@ -1,0 +1,75 @@
+// pt-forms.less
+//
+// Стили для форм
+//
+// Styleguide forms.
+
+// .form-bordered
+//
+// Форма с внешней окантовкой
+//
+
+// HOT-FIX override mosaic
+.form-control {
+  height: 32px;
+}
+
+// Styleguide forms.10
+.form-bordered {
+  padding-top: (@grid-gutter-width / 2);
+
+  legend {
+    font-size: @font-size-h4;
+    color: @legend-color;
+    border-bottom: 0;
+    font-weight: bold;
+  }
+
+  .control-label {
+    font-weight: normal;
+  }
+}
+
+// .form-actions
+//
+// Форма с внешней окантовкой
+//
+// Styleguide forms.20
+.form-actions {
+  background-color: @element-bg;
+  padding: (@grid-gutter-width / 2);
+  border-top: 1px solid @border-color;
+}
+
+// .form-horizontal
+//
+// Форма с горизонтальным расположением полей и меток
+//
+// .control-label - Подпись к полю
+// .form-condensed - Форма с ужатым межстрочным интервалом
+//
+// Styleguide forms.30
+.form-horizontal {
+  fieldset {
+    legend {
+      margin-bottom: 10px;
+    }
+    margin-bottom: 15px;
+  }
+  .control-label {
+    text-align: left;
+    font-weight: normal;
+  }
+  &.form-condensed {
+    .form-group {
+      margin-bottom: @pt-layout-base-indent / 2;
+    }
+  }
+}
+
+
+.form-group {
+  .timeHours {
+    width: 62px;
+  }
+}

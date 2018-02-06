@@ -1,0 +1,298 @@
+/* COMMON */
+.booking-page {
+  background: var(--background-grey) url(/img/halls/background.jpg) repeat left top;
+}
+
+.booking-page__form-container {
+
+}
+
+
+/* TITLE */
+.order-title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.order-title__header {
+  padding: 0 0 10px;
+  font-size: 39px;
+  line-height: 1.1;
+  text-transform: none;
+  color: var(--virsuvius);
+}
+.order-title__subtitle {
+  font-style: italic;
+  color: var(--boulder);
+  line-height: 1.2;
+  font-size: 12px;
+}
+.order-title__share-title {
+  font-weight: 700;
+  color: var(--boulder);
+  line-height: 1.2;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* FORM CONTENT */
+.order-content {
+  position: relative;
+  width: 534px;
+  padding: 20px 13px 10px;
+  margin: 0 0 50px;
+  background: url('/img/booking/content_pattern.png') 0 0 repeat;
+  border-radius: 5px;
+  box-shadow: inset 0 4px 0 var(--red-night-shadz);
+
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -41px;
+    width: 560px;
+    height: 41px;
+    content: "";
+    background: url('/img/booking/shadow.png') 0 0 no-repeat;
+  }
+}
+
+.order-content__background {
+  position: relative;
+  margin: 0 0 20px;
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.7), 0 1px 4px rgba(61, 26, 2, 0.4);
+  background: var(--ivory);
+  background: linear-gradient(to bottom, var(--ivory) 0%, white 55%, var(--light-athens-grey) 100%);
+  padding: 21px 0 8px;
+
+  &:after {
+    position: absolute;
+    width: 30px;
+    height: 14px;
+    bottom: -13px;
+    left: 50%;
+    margin: 0 0 0 -15px;
+    content: "";
+    background: url('/img/booking/corner.png') 0 0 no-repeat;
+  }
+}
+
+.has-error.input-string__field_order.input-string__field {
+  border: 1px solid var(--dark-silver);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.two-column-container-content.two-column-container-content_booking {
+  margin-top: 6px;
+}
+
+/* FIELDS */
+.order-field {
+  display: flex;
+  padding: 0 0 16px;
+
+  &.required {
+    .order-field__label:after {
+      position: relative;
+      padding: 0 0 0 2px;
+      top: -3px;
+      content: "*";
+      color: var(--milano-red);
+      font-family: 'Trebuchet MS', Helvetica, sans-serif;
+      font-size: 12px;
+    }
+  }
+}
+
+.order-field__label {
+  display: inline-block;
+  width: 164px;
+  height: 31px;
+  padding-left: 20px;
+  line-height: 31px;
+  color: var(--white-tundora);
+  font-size: 15px;
+}
+
+.order-field__input {
+  display: inline-block;
+  position: relative;
+}
+
+.input-string__field_order {
+  width: 292px;
+}
+
+.drop-down.drop-down_order {
+  width: 280px;
+  border: 1px solid var(--invisible-grey);
+  box-sizing: border-box;
+}
+
+.text-area__field_order {
+  width: 292px;
+  height: 101px;
+}
+
+/* SUBMIT */
+.submit-button.submit-button_order {
+  width: 286px;
+  height: 60px;
+  padding-left: 68px;
+  font: normal 700 22px 'Trebuchet MS', Helvetica, sans-serif;
+  outline: none;
+
+  background: url('/img/booking/request.png') 29px 20px no-repeat, linear-gradient(to bottom, var(--blush) 0%, var(--stiletto) 50%, var(--brown-claret) 50%, var(--monarch) 100%);
+
+  &:hover {
+    box-shadow: inset 0 1px 0 white, inset 0 0 20px rgba(255, 255, 255, 0.7);
+    background: url('/img/booking/request.png') 29px 20px no-repeat, linear-gradient(to bottom, var(--blush) 0%, var(--stiletto) 50%, var(--brown-claret) 50%, var(--monarch) 100%);
+  }
+
+  &:active {
+     box-shadow: inset 0 1px 0 var(--white), inset 0 0 20px rgba(49, 8, 16, 0.6);
+  }
+}
+
+/* CEO ARTICLE */
+.booking-article {
+  display: block;
+  margin-top: 50px;
+}
+
+.two-column-container.two-column-container_booking {
+  padding-top: 35px;
+}
+
+@media (--desktop-large) {
+  .two-column-container-content_booking {
+    margin: 0 auto 20px auto;
+  }
+
+  .two-column-container.two-column-container_booking {
+    padding: 35px 0 0 0;
+  }
+}
+
+@media (--tablet) {
+  .two-column-container-content.two-column-container-content_booking {
+    width: 100%;
+  }
+
+  .main-article {
+    max-width: 600px;
+    margin: 50px auto 0 auto;
+    padding: 0 10px;
+  }
+
+  .order-content {
+    margin: 0 auto 50px auto;
+  }
+}
+
+@media (--phone), (--tablet) and (--minPhone) and (orientation: landscape) {
+  .order-content {
+    background: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 20px 0 0 0;
+    margin: 0 0 15px 0;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .input-error.input-error_phone.order-input-phone__error {
+    right: 0;
+  }
+
+  .input-error.order-input-name__error,
+  .input-error.order-input-email__error {
+    right: 0;
+    top: 42px;
+  }
+
+  .order-content__background {
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    width: 90%;
+    margin: 0 auto;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .order-field {
+    flex-direction: column;
+  }
+
+  .order-field__label {
+    text-align: left;
+    font-size: 1.5em;
+    padding: 0 16px 0;
+    width: 60%;
+  }
+
+  .order-field__input {
+    .input-string, .phone-input, .text-area {
+      width: 100%;
+    }
+
+    .phone-input__phone, .input-string__field_order, .sine-input-number__field {
+      height: 40px;
+      width: 100%;
+      font-size: 1.4em;
+      box-sizing: border-box;
+    }
+
+    .multi-date-picker_order {
+      width: 100%;
+    }
+
+    .SingleDatePicker {
+      width: 100%;
+    }
+
+    .drop-down_order {
+      width: 100%;
+    }
+
+    .drop-down-placeholder {
+      height: 40px;
+    }
+
+    .drop-down-placeholder__control {
+      width: 40px;
+    }
+
+    .single-date-picker {
+      .SingleDatePickerInput {
+        padding-left: 10px;
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+      }
+
+      .DateInput {
+        font-size: 1.25em;
+        font-family: 'Georgia', serif;
+      }
+
+      .DateInput__display-text {
+        line-height: 28px;
+      }
+    }
+  }
+
+  .text-area__field.text-area__field_order {
+    width: 100%;
+    height: 105px;
+    font-size: 1.4em;
+  }
+
+}

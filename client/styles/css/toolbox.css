@@ -1,0 +1,78 @@
+.constructor-doors-toolbox {
+    height: 80px;
+    box-sizing: border-box;
+    overflow: auto;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: flex;
+}
+
+.constructor-doors-toolbox-instruments {
+    width: 466px;
+    height: 80px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.constructor-doors-toolbox .constructor-shared-input-container {
+    height: auto;
+    margin-bottom: 23px;
+}
+
+.constructor-doors-toolbox .constructor-shared-checkbox-label {
+    margin-left: 0;
+}
+
+.constructor-doors-toolbox .constructor-shared-image-container {
+    display: inline-flex;
+    width: 100px;
+}
+
+.constructor-doors-toolbox .constructor-shared-image-container-label {
+    margin-bottom: 5px;
+}
+
+.constructor-doors-toolbox-block {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.constructor-doors-toolbox .shared-color-picker-options {
+    top: 158px;
+    left: 54px;
+}
+
+.constructor-doors-toolbox-block:first-child {
+    margin-right: 16px;
+}
+
+.doors-collections-container {
+    display: inline-block;
+    width: 490px;
+
+    /* It's necessary for the correct location of the spinner */
+    position: relative;
+}
+
+.collection-loader {
+    position: absolute;
+    display: flex;
+    left: 0;
+    right: 0;
+    top:  0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.unvisible {
+    display: none;
+}

@@ -1,0 +1,73 @@
+// uiSelectUserDefined.less
+//
+// Корректировки оригинальных стилей ui-select
+
+// Группировка (аналог optgroup) в ui-select
+.ui-select-choices-group-label {
+  font-weight: bold;
+  padding-left: @pt-layout-base-indent;
+  font-size: inherit;
+}
+
+// Обрезка длинных названий выбранных опций в случае ui-select single
+.ui-select-match-text {
+  width: calc(~"100% - 20px"); // 20px - это место для иконки треугольника справа
+  .text-overflow();
+}
+
+// Случай ui-select multiple
+.ui-select-multiple.ui-select-bootstrap {
+  // в вендорных стилях задано height: auto, из-за чего пустой контролл меняет высоту после выбора первого элемента
+  min-height: @input-height-base;
+
+  // Стили выбранного элемента, т.е. плашки с крестиком
+  .ui-select-match-item {
+    // нормальный шрифт
+    font-size: @font-size-base;
+
+    // Обрезаем длинные тексты
+    > span:not(.ui-select-match-close) {
+      display: inline-block;
+      line-height: 1;
+      vertical-align: middle;
+      max-width: 160px;
+      text-align: left;
+      .text-overflow();
+    }
+
+    /*
+    Признаки невалидности и частичной валидности для выбранных элементов.
+    На данный момент это используется только в редактировании задачи сканирования в поле "Группы активов"
+    во вкладках "Включить в сканирование" и "Исключить из сканирования".
+    */
+    &.invalid {
+      border: 1px solid @state-danger-text;
+      color: @state-danger-text;
+      .ui-select-match-close {
+        color: @state-danger-text;
+      }
+    }
+    &.partialvalid {
+      border: 1px solid @state-warning-text;
+      color: @state-warning-text;
+      .ui-select-match-close {
+        color: @state-warning-text;
+      }
+    }
+  }
+
+  // Центрируем по вертикали крестик удаления выбранного элемента
+  .ui-select-match .close {
+    line-height: 1;
+    font-size: (@font-size-base * 1.5); // возвращаем такой же размер, как у класса .close
+  }
+
+  // Неактивная кнопка удаления элемента из строки выбранных элементов
+  .ui-select-match-close-disabled {
+    opacity: 0.1;
+    &:hover,
+    &:focus {
+      opacity: 0.1;
+    }
+  }
+}

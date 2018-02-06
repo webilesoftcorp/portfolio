@@ -1,0 +1,602 @@
+.hall-page {
+  background: var(--background-grey) url('/img/halls/background.jpg') repeat left top;
+}
+
+div.two-column-container__hall {
+  padding: 0;
+  width: 980px;
+  max-width: 980px;
+  flex-wrap: wrap;
+}
+
+section.two-column-container__content-hall {
+  width: 68.5%;
+}
+
+.hall-page__detail-container {
+    display: flex;
+}
+
+.hall-page__detail-container .vcard {
+  min-width: 290px;
+  padding: 30px 25px 0 35px;
+}
+
+aside.two-column-container-hall-aside {
+  border-left: none;
+  margin: 0 0 20px 0;
+  padding: 0 0 0 15px;
+  width: 31%;
+}
+
+.hall-gallery__count-photo {
+  color: #fff;
+  font-family: 'Trebuchet MS';
+  font-size: 1.8rem;
+  position: absolute;
+  left: 35px;
+  bottom: 35px;
+  z-index: 1;
+}
+
+.hall-gallery__images-container {
+  cursor: pointer;
+  position: relative;
+
+  .image-gallery-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 230px;
+    height: 60vw;
+    max-width: 1024px;
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+
+    & img {
+      min-width: 100%;
+      min-height: 100%;
+      position: absolute;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+
+      &.by-height {
+        width: auto;
+        height: 100%;
+      }
+
+      &.by-width {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  & .fullscreen {
+    & .image-gallery-image {
+      width: 100vw;
+      max-height: 85vh;
+    }
+  }
+}
+
+.icon.hall-gallery-fullscreen {
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  color: #98122e;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  right: 15px;
+  bottom: 15px;
+}
+
+.icon.hall-gallery-nav {
+  width: 35px;
+  height: 66px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  color: #98122e;
+  top: calc(50% - 33px);
+
+  &.right {
+    right: 35px;
+  }
+
+  &.left {
+    left: 35px;
+  }
+}
+
+.hall-gallery-cover {
+  margin-bottom: 15px;
+  min-height: 360px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hall-gallery-cover-3d-tour {
+  user-select: none;
+  position: absolute;
+  cursor: pointer;
+  right: 10px;
+  top: 10px;
+  background: #98122e;
+  border-color: transparent;
+  color: #fff;
+  height: 40px;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  font-family: Trebuchet MS;
+  padding: 0 20px;
+  transition: .2s;
+  display: flex;
+  z-index: 1;
+  align-items: center;
+
+  &:hover {
+    background: #bb0f33;
+  }
+}
+
+.hall-gallery-cover__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.hall-gallery-cover-image {
+  cursor: pointer;
+  position: absolute;
+  min-height: 360px;
+  min-width: 100%;
+
+  &.by-height {
+    width: auto;
+    height: 100%;
+  }
+
+  &.by-width {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.hall-gallery-breadcrumbs {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  background-color: #fff;
+  padding: 16px 14px 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-family: Trebuchet MS;
+  font-size: 1.3rem;
+  color: #737373;
+  line-height: 1.3;
+
+  a {
+    font-family: "Arial", Arial, Helvetica, sans-serif;
+    color: #1f638a;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h1 {
+    display: inline;
+    font-weight: normal;
+  }
+}
+
+.hall-gallery-breadcrumbs__arrow {
+  font-weight: 700;
+  color: #737373;
+  display: inline-block;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.hall-gallery-thumbs {
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hall-gallery-thumbs__item {
+  position: relative;
+  height: 120px;
+  width: 190px;
+  margin: 0 6px;
+  overflow: hidden;
+
+  & > div {
+    height: 120px;
+    width: 190px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.hall-gallery-thumbs__photo {
+  width: 100%;
+  min-height: 120px;
+  position: absolute;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.hall-gallery-thumbs__more-photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  padding: 0 12px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  line-height: 1.5;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+button.hall-page__continue_search {
+  display: block;
+  height: 50px;
+  width: 100%;
+  line-height: 48px;
+  border: 1px solid #73b638;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: #73b638;
+  text-decoration: none;
+  transition: .2s;
+  margin: 0 30px 30px;
+
+  &:hover {
+    background-color: #81c73b;
+  }
+}
+
+.hall-page-detail {
+  padding: 25px 20px 0 35px;
+  margin-bottom: 40px;
+  font-family: "Arial", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.hall-page-detail-description {
+  text-align: justify;
+  white-space: pre-line;
+  color: #505050;
+}
+
+.hall-page-detail-description__title {
+  font-family: Trebuchet MS;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #2a2a2a;
+  margin-bottom: 15px;
+}
+
+.hall-page-detail-description__text {
+  margin-bottom: 20px;
+}
+
+.hall-page-detail-additional {
+  font-family: 'Trebuchet MS';
+  color: #505050;
+}
+
+.hall-page-detail-additional__item {
+  margin-bottom: 20px;
+  position: relative;
+  line-height: 18px;
+
+  & span {
+    font-weight: bold;
+    color: #2a2a2a;
+  }
+}
+
+.hall-page-contacts {
+  display: flex;
+  flex-wrap: wrap;
+
+  & button {
+    margin: 4px;
+    width: 208px;
+  }
+}
+
+.hall-page-contacts__phone {
+  width: 181px;
+}
+
+.hall-page-contacts__label {
+  font-size: 1.2rem;
+  font-family: Georgia;
+  font-style: italic;
+  color: #737373;
+  letter-spacing: 0.2px;
+}
+
+.hall-page-contacts__number {
+  color: #98122e;
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+button.btn-red {
+  max-width: 208px;
+  background: #98122e;
+  border-color: transparent;
+  color: #fff;
+
+  text-decoration: none;
+  vertical-align: middle;
+  height: 40px;
+  line-height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  text-align: center;
+  font-family: Trebuchet MS;
+  cursor: pointer;
+  padding: 0 20px;
+  transition: .2s;
+  overflow: hidden;
+
+  &:hover {
+    background: #bb0f33;
+  }
+}
+
+button.btn-grey {
+  max-width: 208px;
+  border-color: #bcb9b9;
+  color: #959595;
+  background: transparent;
+
+  text-decoration: none;
+  vertical-align: middle;
+  height: 40px;
+  line-height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  text-align: center;
+  font-family: Trebuchet MS;
+  cursor: pointer;
+  padding: 0 20px;
+  transition: .2s;
+  overflow: hidden;
+
+  &:hover {
+    background: transparent;
+    border-color: #98122e;
+    color: #98122e;
+  }
+}
+
+button.btn-green {
+  max-width: 208px;
+  color: #73b638;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  vertical-align: middle;
+  height: 40px;
+  line-height: 38px;
+  border: 1px solid #73b638;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  text-align: center;
+  font-family: Trebuchet MS;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: .2s;
+  overflow: hidden;
+
+  &:hover {
+    background-color: #73b638;
+    color: #fff;
+  }
+}
+
+.vcard {
+  text-align: left;
+  padding: 30px 22px 0 20px;
+  font-family: "Arial", Arial, Helvetica, sans-serif;
+}
+
+.vcard-option-list {
+  padding-bottom: 8px;
+}
+
+.vcard__title {
+  font-size: 2rem;
+  color: #2a2a2a;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.vcard-price {
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #2a2a2a;
+  margin-bottom: 20px;
+  display: flex;
+  margin-bottom: 17px;
+}
+
+.vcard-price__addition {
+  display: flex;
+  flex-direction: column;
+  line-height: initial;
+}
+
+.vcard-price__currency {
+  height: 12px;
+  line-height: 10px;
+  font-size: 1.4rem;
+  white-space: normal;
+  margin-left: 4px;
+  height: content;
+}
+
+.vcard-price__info {
+  height: 12px;
+  font-size: 1.1rem;
+  color: #959595;
+  font-style: italic;
+  font-family: Georgia;
+  font-weight: normal;
+  white-space: normal;
+  margin-left: 4px;
+}
+
+.option-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+div.option-list-item__icon {
+  width: auto;
+  font-size: 20px;
+  color: #eead02;
+}
+
+.option-list-item__label {
+  font-family: Trebuchet MS;
+  color: #505050;
+  line-height: 14px;
+  font-size: 14px;
+  margin-left: 10px;
+
+  &.stations {
+    white-space: pre;
+  }
+
+  & > span {
+    font-weight: bold;
+    color: #98122e;
+    font-size: 1.8rem;
+  }
+}
+
+.vcard-controls {
+  & button {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.icon.vcard-controls__icon {
+  font-size: initial;
+  color: inherit;
+  width: initial;
+  padding-right: 5px;
+}
+
+@media (--tablet) {
+  .hall-page__detail-container {
+    flex-direction: column-reverse;
+  }
+
+  .hall-gallery__count-photo {
+    font-size: 1.4rem;
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .hall-page__detail-container {
+    & .vcard {
+      padding: 10px;
+    }
+
+    & .hall-page-detail {
+      padding: 10px 20px 0 20px;
+    }
+  }
+
+  .hall-page-contacts {
+      & .btn-red {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      & .btn-green {
+        display: none;
+      }
+  }
+}
+
+@media (--minDesktop-large) {
+  .hall-page__detail-container .vcard,
+  .hall-gallery__images-container {
+    display: none;
+  }
+}
+
+@media (--desktop-large) {
+  div.two-column-container__hall {
+    width: 100%;
+  }
+  section.two-column-container__content-hall {
+    width: 100%;
+  }
+
+  .hall-gallery-breadcrumbs,
+  div.hall-gallery-thumbs,
+  div.hall-gallery-cover {
+    display: none;
+  }
+
+  .hall-page-contacts {
+      flex-direction: column;
+
+      & button {
+        margin-left: 0;
+        width: 280px;
+        max-width: 280px;
+      }
+  }
+}

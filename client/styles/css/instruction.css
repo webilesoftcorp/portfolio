@@ -1,0 +1,121 @@
+.instruction-container {
+    box-sizing: border-box;
+    border-radius: 2px;
+
+    position: absolute;
+    top: 120px;
+    left: 160px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.instruction-modal {
+    position: relative;
+}
+
+.instruction-modal-steps-scroller {
+    overflow: hidden;
+    height: 400px;
+    width: 592px;
+    margin-left: 30px;
+
+    display: flex;
+}
+
+.instruction-text-container {
+    height: 400px;
+    width: 640px;
+
+    background-color: #fff;
+    color: #000;
+
+    overflow: hidden;
+}
+
+.instruction-steps-container {
+    height: 400px;
+    width: 587px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-right: 44px;
+}
+
+.instruction-steps-title {
+    margin: 30px 0 24px 0;
+    width: 640px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.instruction-steps-text {
+    font-size: 13px;
+    line-height: 15px;
+    margin-bottom: 20px;
+}
+
+.instruction-steps-step-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.instruction-close-button {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+
+    width: 36px;
+    height: 36px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.instruction-close-button-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.instruction-close-cross {
+    background-color: #050505;
+
+    width: 20px;
+    height: 4px;
+    position: absolute;
+
+    top: 16px;
+    left: 8px;
+}
+
+.instruction-close-cross.left {
+    transform: rotate(45deg);
+}
+
+.instruction-close-cross.right {
+    transform: rotate(-45deg);
+}
+
+.instruction-modal-scrollbar-container {
+    background-color: #eee;
+    height: 340px;
+    width: 6px;
+
+    display: inline-block;
+    margin-left: -24px;
+    margin-top: 30px;
+}
+
+
+.instruction-modal-scrollbar {
+    background-color: #00b0ff;
+    width: 6px;
+    height: 186px;
+    border-radius: 1px;
+    cursor: pointer;
+}

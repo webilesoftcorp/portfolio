@@ -1,0 +1,76 @@
+<div class="layout-column">
+    <nav class="mc-action-bar">
+        <div class="mc-action-bar__container">
+            <div class="mc-action-bar__left">
+                <header class="mc-action-bar__header" translate>COMMON_INCIDENTS</header>
+
+                <div class="mc-action-bar__vertical-splitter"></div>
+
+                <div class="mc-action-bar__items-group">
+                    <div class="mc-action-bar__item">
+                        <a ui-sref="incidents.create"
+                           class="mc-btn mc-btn_action-bar mc-action-bar__link mc-btn_action-bar-left-icon"
+                           pt-user-permissions
+                           resource="incidents"
+                           action="create">
+                            <i class="fa fa-plus mc-btn__icon"></i>
+                            <span translate>ADD</span>
+                        </a>
+                    </div>
+
+                    <div class="mc-action-bar__item" ng-show="$ctrl.selectedIncident.status !== 'closed'">
+                        <button type="button"
+                                ng-disabled="$ctrl.selectedIncidents.length > 1 || !$ctrl.isIncidentEditable"
+                                ng-click="$ctrl.handleEditBtnClick()"
+                                class="mc-btn mc-btn_action-bar mc-action-bar__link mc-btn_action-bar-left-icon no-animation"
+                                pt-user-permissions
+                                resource="incidents"
+                                action="edit">
+                            <i class="fa fa-pencil mc-btn__icon"></i>
+                            <span translate>EDIT</span>
+                        </button>
+                    </div>
+
+                    <div class="mc-action-bar__vertical-splitter"></div>
+
+                    <div class="mc-action-bar__item">
+                        <button type="button"
+                                class="mc-btn mc-btn_action-bar mc-btn_action-bar-left-icon"
+                                id="deactivateIncidentsBtn"
+                                ng-click="$ctrl.handleCloseIncidents()"
+                                ng-disabled="$ctrl.isIncidentsDeactivatable"
+                                pt-user-permissions
+                                resource="incidents"
+                                action="edit">
+                            <i class="fa fa-archive mc-btn__icon"></i>
+                            <span translate>CLOSE</span>
+                        </button>
+                    </div>
+
+                    <div class="mc-action-bar__item">
+                        <button type="button"
+                                class="mc-btn mc-btn_action-bar mc-btn_action-bar-left-icon"
+                                id="importBtn"
+                                ng-click="$ctrl.handleImportBtnClick()">
+                            <i class="fa fa-arrow-up mc-btn__icon"></i>
+                            <span translate>COMMON_IMPORT_TITLE</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mc-action-bar__right">
+                <pt-filters filterable-fields="filterableFields" entity="incidents" deactivatable="false">
+                </pt-filters>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-container layout-row layout-padding">
+        <incidents-groups-tree class="layout-row">
+        </incidents-groups-tree>
+        <incidents-grid class="flex"
+                        incidents-grid-promise="$ctrl.incidentsGridPromise"
+                        grid-options="$ctrl.gridOptions">
+        </incidents-grid>
+    </main>
+</div>
